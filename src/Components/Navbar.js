@@ -1,43 +1,48 @@
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import {FaBars} from 'react-icons/fa'
+import { FiMenu, FiX } from 'react-icons/fi';
 
 
 const Navbar = () => {
-	const [isActive , setActive] = useState('false')
+	const [open , setOpen] = useState('false')
+
+
 
 	return (
-		
-		<div className="navbar">
-		
-			<nav>
-				<ul>
-					<li>
-						<Link to="/"> Home </Link>
+		<div>
+			<div onClick={() => setOpen(!open)} className='nav-icon'> {open ? <FiX/> : <FiMenu/>}
+				</div>
+			<nav className="navbar">
+				<Link to='/' className='nav-logo' onClick={() => setOpen(false)}>
+					Logo
+				</Link>
+				<ul className={ open ? 'nav-links active' : 'nav-links'}>
+					<li className='nav-item'>
+						<Link to="/" className='nav-link' onClick={()=> setOpen(false)}> Home </Link>
 						</li>
-					<li>
-						<Link to="/about"> About </Link>
+					<li className='nav-item'>
+						<Link to="/about" className='nav-link' onClick={()=> setOpen(false)}> About </Link>
 					</li>
-					<li>
-						<Link to="/projects">Projects</Link>
+					<li className='nav-item'>
+						<Link to="/projects" className='nav-link' onClick={()=> setOpen(false)}>Projects</Link>
 					</li>
-					<li>
-						<Link to="/resume">Resume</Link>
+					<li className='nav-item'>
+						<Link to="/resume" className='nav-link' onClick={()=> setOpen(false)}>Resume</Link>
 					</li>
-					<li>
-						<Link to="/testimonials">Testimonials</Link>
+					<li className='nav-item'>
+						<Link to="/testimonials" className='nav-link' onClick={()=> setOpen(false)}>Testimonials</Link>
 					</li>
-					<li>
-						<Link to="/contact">Contact</Link>
+					<li className='nav-item'>
+						<Link to="/contact" className='nav-link' onClick={()=> setOpen(false)}>Contact</Link>
 					</li>
-					<li className='icon'>
-						<FaBars/>
-					</li>
+					
 				</ul>
 			</nav>
+			</div>
 	
-		</div>
+
+	
 	);
 };
 

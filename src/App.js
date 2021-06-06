@@ -7,7 +7,7 @@ import Contact from './Components/Contact'
 import Projects from './Components/Projects'
 import Resume from './Components/Resume'
 import Testimonials from './Components/Testimonials'
-
+import './App.css'
 function App() {
   return (
     <div className="App">
