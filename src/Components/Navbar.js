@@ -11,12 +11,14 @@ const Navbar = () => {
 
 	return (
 		<div>
-			<div onClick={() => setOpen(!open)} className='nav-icon'> {open ? <FiX/> : <FiMenu/>}
-				</div>
-			<nav className="navbar">
+			<div onClick={() => setOpen(!open)} className='nav-icon'> {open ? <FiX/> : <FiMenu/>} </div>
+			<nav>
+			
+			
 				<Link to='/' className='nav-logo' onClick={() => setOpen(false)}>
 					Logo
 				</Link>
+		
 				<ul className={ open ? 'nav-links active' : 'nav-links'}>
 					<li className='nav-item'>
 						<Link to="/" className='nav-link' onClick={()=> setOpen(false)}> Home </Link>
