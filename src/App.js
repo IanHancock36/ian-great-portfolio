@@ -8,7 +8,10 @@ import Projects from './Components/Projects'
 import Resume from './Components/Resume'
 import Testimonials from './Components/Testimonials'
 import './App.css'
+import {useSelector} from 'react-redux'
+
 function App() {
+  const counter = useSelector( state => state.counter)
   return (
     <div className="App">
 
@@ -30,6 +33,7 @@ function App() {
        
        </Switch>
      </BrowserRouter>
+     <h1>Counter {counter} </h1>
     </div>
   );
 }
