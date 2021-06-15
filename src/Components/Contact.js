@@ -1,13 +1,9 @@
-import React,{useEffect, useState} from 'react';
+import React from "react";
+import { useForm } from "react-hook-form";
 
 const Contact = () => {
-    const [firstName ,setFirstName]= useState('')
-    const [lastName, setLastName] = useState('')
-    const [email, setEmail] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
-    const [message, setMessage] = useState('')
-	
-    
+	const {register, handleSubmit} = useForm()
+    const onSubmit = data => console.log(data) 
     return (
 		<form className="contact-form">
 			<div className="form-group">
@@ -31,7 +27,7 @@ const Contact = () => {
 				<input type="text-area" className="message-box" placeholder="Enter your message here" />
 			</div>
 
-			<button type="submit" className="btn">
+			<button onSubmit={handleSubmit(onSubmit)} type="submit" className="btn">
 				Submit
 			</button>
 		</form>
