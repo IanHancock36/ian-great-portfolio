@@ -8,14 +8,14 @@ import Projects from './Components/Projects'
 import Resume from './Components/Resume'
 import Testimonials from './Components/Testimonials'
 import './App.css'
-import {useSelector ,useDispatch} from 'react-redux'
-import {increment, decrement} from './actions'
+// import {useSelector ,useDispatch} from 'react-redux'
+// import {increment, decrement} from './actions'
 
 
 function App() {
-  const counter = useSelector( state => state.counter)
-  const isLogged = useSelector (state => state.isLogged )
-  const dispatch = useDispatch()
+  // const counter = useSelector( state => state.counter)
+  // const isLogged = useSelector (state => state.isLogged )
+  // const dispatch = useDispatch()
   return (
     <div className="App">
 
@@ -33,15 +33,15 @@ function App() {
        <Route path="/testimonials"> <Testimonials/> </Route>
        <Route path="/contact"> <Contact/> </Route>
        <Route path="/"> <Home/> </Route>
-      
+  
        
        </Switch>
      </BrowserRouter>
-     <h1>Counter {counter} </h1>
+     {/* <h1>Counter {counter} </h1>
      <button onClick={() => dispatch(increment())}> + </button>
      <button onClick={()=> dispatch(decrement())}> - </button>
     {isLogged? <h3>valuable info {isLogged}</h3> :'not logged in' }
-    
+     */}
     </div>
     // add button for is logged to toggle logged and unlogged 
   );
