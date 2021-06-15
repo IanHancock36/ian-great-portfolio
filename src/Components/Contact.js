@@ -5,14 +5,14 @@ const Contact = () => {
 	const {register, handleSubmit} = useForm()
     const onSubmit = data => console.log(data) 
     return (
-		<form className="contact-form">
+		<form onSubmit = {handleSubmit(onSubmit)} className="contact-form">
 			<div className="form-group">
 				<lable htmlFor="First Name">First Name</lable>
-				<input type="text" placeholder="First Name" />
+				<input {...register("firstName", { required: true, maxLength: 20 })} />
 			</div>
 			<div className="form-group">
 				<lable htmlFor="Last Name">Last Name</lable>
-				<input type="text" placeholder="Last Name" />
+			<input {...register('lastName',{required: true, maxLength: 20})}/>
 			</div>
 			<div className="form-group">
 				<lable htmlFor="Email">Email</lable>
@@ -26,10 +26,9 @@ const Contact = () => {
 				<lable htmlFor="Message">Message</lable>
 				<input type="text-area" className="message-box" placeholder="Enter your message here" />
 			</div>
+			<input type = 'submit' /> 
 
-			<button onSubmit={handleSubmit(onSubmit)} type="submit" className="btn">
-				Submit
-			</button>
+			
 		</form>
 	);
 };
